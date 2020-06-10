@@ -10,7 +10,7 @@ const forecast = (lat, lgn, callback) => {
         } else if (body.error) {
             callback('Could not find data. Try another location.', undefined);
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. It fees like ' + body.current.feelslike + ' degrees out.')
+            callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degress out. It fees like ' + body.current.feelslike + ' degrees out and the humidity is ' + body.current.humidity + '.')
         }
     });
 
