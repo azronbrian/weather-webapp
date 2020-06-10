@@ -12,7 +12,7 @@ weatherForm.addEventListener('submit', (e) => {
         messageOne.textContent = 'you must enter location'
         messageTwo.textContent = ''
     } else {
-        const api = 'http://localhost:3000/weather?address=' + location
+        const api = '/weather?address=' + location
         messageOne.textContent = 'loading..'
         messageTwo.textContent = ''
         fetch(api).then((response) => {
