@@ -34,14 +34,6 @@ app.get('/about', (req, res) => {
     })
 });
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help',
-        message: 'How can we help you?',
-        name: 'Azron Brian'
-    })
-})
-
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
@@ -52,37 +44,17 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({error});
         } else {
-            forecast(latitude, longitude, (error, forecastData) => {
+            forecast(latitude, longitude, (error, data) => {
                 if (error) {
                     return res.send({error});
                 } else {
                     res.send({
                         location: location,
-                        forecast: forecastData
+                        forecast: data
                     })
                 }   
             })
         }    
-    })
-});
-
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'you must provide search term'
-        })
-    }
-    console.log(req.query)
-    res.send({
-        products: []
-    })
-});
-
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        message: 'Help article not found',
-        name: 'Azron Brian'
     })
 });
 
