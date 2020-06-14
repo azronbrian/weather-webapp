@@ -5,12 +5,35 @@
         <title>About</title>
         <link rel="icon" href="/img/favicon.png">
         <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://kit.fontawesome.com/593d1e5026.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="main-content">
             {{>header}}
-            <p>This site was created by Azron Brian. It uses data from mapbox.com and weatherstack.com</p>
-            <img class="portrait" src="/img/robot.png" alt="">
+            <div class="content">
+                <div class="image">
+                    <img class="portrait" src="/img/me.png" alt="">
+                    <div class="socials">
+                        <a href="https://twitter.com/azronbrian" target="_blank"><i class="fab fa-twitter"></i><a>
+                        <a href="https://www.linkedin.com/in/azronbrian/" target="_blank"><i class="fab fa-linkedin"></i><a>
+                        <a href="https://github.com/azronbrian" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>This simple web application tells the weather of a location.</p>
+                    <p>It consumes two APIs to retrieve instant, accurate weather information for any location precisely.</p>
+                    <div class="api_logos">
+                        <div class="api">
+                            <img src="/img/mapbox.png" alt="">
+                            <h2><a href="https://www.mapbox.com/" target="_blank">mapbox API</a></h2>
+                        </div>
+                        <div class="api">
+                            <img src="/img/weatherstack.png" alt="">
+                            <h2><a href="https://weatherstack.com/" target="_blank">weatherstack API</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         {{>footer}}
     </body>
